@@ -112,7 +112,7 @@ const Form: React.FC<any> = ({ formId, petForm, forNewPet = true }) => {
         <label htmlFor="name">Name</label>
         <input
           type="text"
-          maxLength="20"
+          maxLength={20}
           name="name"
           value={form.name}
           onChange={handleChange}
@@ -122,7 +122,7 @@ const Form: React.FC<any> = ({ formId, petForm, forNewPet = true }) => {
         <label htmlFor="owner_name">Owner</label>
         <input
           type="text"
-          maxLength="20"
+          maxLength={20}
           name="owner_name"
           value={form.owner_name}
           onChange={handleChange}
@@ -132,7 +132,7 @@ const Form: React.FC<any> = ({ formId, petForm, forNewPet = true }) => {
         <label htmlFor="species">Species</label>
         <input
           type="text"
-          maxLength="30"
+          maxLength={30}
           name="species"
           value={form.species}
           onChange={handleChange}
@@ -158,7 +158,7 @@ const Form: React.FC<any> = ({ formId, petForm, forNewPet = true }) => {
         <label htmlFor="diet">Diet</label>
         <textarea
           name="diet"
-          maxLength="60"
+          maxLength={60}
           value={form.diet}
           onChange={handleChange}
         />
@@ -175,7 +175,7 @@ const Form: React.FC<any> = ({ formId, petForm, forNewPet = true }) => {
         <label htmlFor="likes">Likes</label>
         <textarea
           name="likes"
-          maxLength="60"
+          maxLength={60}
           value={form.likes}
           onChange={handleChange}
         />
@@ -183,7 +183,7 @@ const Form: React.FC<any> = ({ formId, petForm, forNewPet = true }) => {
         <label htmlFor="dislikes">Dislikes</label>
         <textarea
           name="dislikes"
-          maxLength="60"
+          maxLength={60}
           value={form.dislikes}
           onChange={handleChange}
         />
