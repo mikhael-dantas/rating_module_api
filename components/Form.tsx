@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { mutate } from 'swr'
+import React from 'react';
 
-const Form = ({ formId, petForm, forNewPet = true }) => {
+// import { Container } from './styles';
+
+const Form: React.FC<any> = ({ formId, petForm, forNewPet = true }) => {
   const router = useRouter()
   const contentType = 'application/json'
   const [errors, setErrors] = useState({})
@@ -36,7 +39,7 @@ const Form = ({ formId, petForm, forNewPet = true }) => {
 
       // Throw error with status code in case Fetch API req failed
       if (!res.ok) {
-        throw new Error(res.status)
+        throw new Error(`${res.status}`)
       }
 
       const { data } = await res.json()
@@ -62,7 +65,7 @@ const Form = ({ formId, petForm, forNewPet = true }) => {
 
       // Throw error with status code in case Fetch API req failed
       if (!res.ok) {
-        throw new Error(res.status)
+        throw new Error(`${res.status}`)
       }
 
       router.push('/')
@@ -95,7 +98,7 @@ const Form = ({ formId, petForm, forNewPet = true }) => {
 
   /* Makes sure pet info is filled for pet name, owner name, species, and image url*/
   const formValidate = () => {
-    let err = {}
+    let err: any = {}
     if (!form.name) err.name = 'Name is required'
     if (!form.owner_name) err.owner_name = 'Owner is required'
     if (!form.species) err.species = 'Species is required'

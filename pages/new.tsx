@@ -1,6 +1,6 @@
 import Form from '../components/Form'
 
-const NewPet = () => {
+const NewPet: React.FC = () => {
   const petForm = {
     name: '',
     owner_name: '',
